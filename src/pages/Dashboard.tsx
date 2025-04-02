@@ -11,7 +11,7 @@ const ACTION_TYPES = [
   { id: 'smokes', label: 'ciggerate smoked today', icon: '🚭'},
   { id: 'cardio', label: 'jogging/running', icon: '🏃'},
 { id: 'focused', label: 'study sessions today', icon: '📖'},
-{ id: 'cooking', label: 'cooked food', icon: '🧑‍🍳'},
+{ id: 'cooking', label: 'cooked food', icon: '🧑‍🍳 '},
   
 ];
 
