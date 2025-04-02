@@ -7,6 +7,7 @@ import Layout from './components/Layout';
 import Dashboard from './pages/Dashboard';
 import Leaderboard from './pages/Leaderboard';
 import Profile from './pages/Profile';
+import CommutePlanning from './pages/CommutePlanning';
 
 function App() {
   const [session, setSession] = useState(null);
@@ -14,13 +15,13 @@ function App() {
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
+      setSession(session as any);
     });
 
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session);
+      setSession(session as null);
     });
 
     return () => subscription.unsubscribe();
@@ -39,6 +40,7 @@ function App() {
               <Routes>
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/leaderboard" element={<Leaderboard />} />
+                <Route path="/commute-planning" element={<CommutePlanning />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="*" element={<Navigate to="/dashboard" replace />} />
               </Routes>

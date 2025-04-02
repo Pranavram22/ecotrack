@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Leaf, LayoutDashboard, Trophy, UserCircle, LogOut } from 'lucide-react';
+import { Leaf, LayoutDashboard, Trophy, UserCircle, LogOut, Bus } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import toast from 'react-hot-toast';
 
@@ -71,6 +71,18 @@ export default function Layout({ children, darkMode, setDarkMode }: LayoutProps)
             >
               <UserCircle size={20} />
               <span>Profile</span>
+            </Link>
+            
+            <Link
+              to="/commute-planning"
+              className={`flex items-center space-x-2 p-3 rounded-lg transition-colors ${
+                isActive('/commute-planning')
+                  ? 'bg-green-600 text-white'
+                  : `${darkMode ? 'text-gray-300 hover:bg-gray-700' : 'text-gray-700 hover:bg-gray-100'}`
+              }`}
+            >
+              <Bus size={20} />
+              <span>Commute Planning</span>
             </Link>
           </nav>
         </div>
