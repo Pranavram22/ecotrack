@@ -21,8 +21,8 @@ export default function AuthForm() {
       if (error) throw error;
       
       toast.success(isSignUp ? 'Account created successfully!' : 'Welcome back!');
-    } catch (error) {
-      toast.error(error.message);
+    } catch (error: any) {
+      toast.error(error?.message || 'An error occurred');
     } finally {
       setLoading(false);
     }
