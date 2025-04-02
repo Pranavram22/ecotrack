@@ -8,6 +8,7 @@ import type { EcoAction, Streak, Badge } from '../types/database';
 const COLORS = ['#22c55e', '#16a34a', '#15803d', '#166534', '#14532d'];
 const ACTION_TYPES = [
   { id: 'transport', label: 'Used Public Transport', icon: '🚌' },
+  { id: 'smokes', label: 'ciiggerate smoked today', icon: '🚭'}
   
 ];
 
